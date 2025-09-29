@@ -4,7 +4,7 @@
 const namaLengkap = "Dede Dian Permana"; // Ganti dengan nama lengkapmu
 const tempatLahir = "Sumedang";
 let tanggalLahir = "01 Mei 2005"; // Format bisa disesuaikan
-let umur = 21; // Ganti dengan umurmu
+let umur = 20; // Ganti dengan umurmu
 let statusMahasiswa = true; // Gunakan boolean (true jika aktif, false jika tidak)
 
 // 2. Gunakan string methods untuk memanipulasi data
