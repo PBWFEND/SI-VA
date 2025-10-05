@@ -1,27 +1,31 @@
 // biodata.js
 
 // 1. Deklarasikan variabel menggunakan const dan let
-const namaLengkap = "Dede Dian Permana"; // Ganti dengan nama lengkapmu
+const namaLengkap = "Tira Azzahra"; // Ganti dengan nama lengkapmu
 const tempatLahir = "Sumedang";
-let tanggalLahir = "01 Mei 2005"; // Format bisa disesuaikan
-let umur = 20; // Ganti dengan umurmu
+let tanggalLahir = "25 Maret 2005"; // Format bisa disesuaikan
+let umur = 21; // Ganti dengan umurmu
 let statusMahasiswa = true; // Gunakan boolean (true jika aktif, false jika tidak)
+const Jurusan = "Sistem Informasi";
+const Universitas = "Universitas Sebelas April";
 
 // 2. Gunakan string methods untuk memanipulasi data
 const namaBesar = namaLengkap.toUpperCase();
-const asalKota = tempatLahir.slice(0, 5); // Mengambil 5 karakter pertama
+const asalKota = tempatLahir.slice(0, 10); // Mengambil 10 karakter pertama
 
 // 3. Siapkan output menggunakan Template Literals
 const biodata = `
 =========================================
           BIODATA MAHASISWA
 =========================================
-Nama Lengkap    : ${namaBesar}
-Tempat Lahir    : ${tempatLahir}
-Tanggal Lahir   : ${tanggalLahir}
-Umur            : ${umur} tahun
+Nama Lengkap      : ${namaBesar}
+Tempat Lahir      : ${tempatLahir}
+Tanggal Lahir     : ${tanggalLahir}
+Umur              : ${umur} tahun
 Asal Kota (Slice) : ${asalKota}
-Status Aktif    : ${statusMahasiswa}
+Status Aktif      : ${statusMahasiswa}
+Jurusan           : ${Jurusan}
+Universitas       : ${Universitas}
 =========================================
 `;
 
