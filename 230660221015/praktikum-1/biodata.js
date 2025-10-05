@@ -1,9 +1,9 @@
 // biodata.js
 
 // 1. Deklarasikan variabel
-const namaLengkap = "Galih Permana Sidik";
+const namaLengkap = "Febry Nursyahbriyana";
 const tempatLahir = "Sumedang";
-let tanggalLahir = "30 November 2003";
+let tanggalLahir = "16 Juli 2004";
 let umur = 21;
 let statusMahasiswa = true;
 
@@ -20,7 +20,7 @@ const namaGanti = namaLengkap.replace("Galih", "Muhammad");
 const asalKota = tempatLahir.slice(0, 8); // "Sumedang"
 
 // 3. Gabungkan string alamat
-const jalan = "Jl. Lapang Mandala No. 32";
+const jalan = "Jl. Raya Sumedang-Cibeureum";
 const kota = "Sumedang";
 
 // pakai operator +
@@ -46,11 +46,11 @@ Tanggal Lahir   : ${tanggalLahir}
 Umur            : ${umur} tahun
 Jurusan         : ${jurusan}
 Universitas     : ${universitas}
-Asal Kota (Slice) : ${asalKota}
+Asal Kota       : ${asalKota}
 Status Mahasiswa: ${statusText}
 
-Alamat (+)      : ${alamatPlus}
-Alamat (Template): ${alamatTemplate}
+Alamat          : ${alamatPlus}
+Alamat          : ${alamatTemplate}
 =========================================
 `;
 
