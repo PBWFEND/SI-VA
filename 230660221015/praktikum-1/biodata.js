@@ -1,7 +1,7 @@
 // biodata.js
 
-// 1. Deklarasikan variabel
-const namaLengkap = "Febry Nursyahbriyana";
+// 1. Deklarasikan variabel menggunakan const dan let
+const namaLengkap = "Febry Nursyahbriyana"; // Ganti dengan nama lengkapmu
 const tempatLahir = "Sumedang";
 let tanggalLahir = "16 Juli 2004";
 let umur = 21;
@@ -11,48 +11,44 @@ let statusMahasiswa = true;
 const jurusan = "Sistem Informasi";
 const universitas = "Universitas Sebelas April";
 
-// 2. String methods tambahan
+// 2. Gunakan string methods untuk memanipulasi data
 const namaBesar = namaLengkap.toUpperCase();
 const namaKecil = namaLengkap.toLowerCase();
-const namaTrim = namaLengkap.trim(); // hapus spasi depan & belakang
-const namaGanti = namaLengkap.replace("Galih", "Muhammad"); 
-
-const asalKota = tempatLahir.slice(0, 8); // "Sumedang"
+const namaTrim = namaLengkap.trim();
+const namaGanti = namaLengkap.replace("Febry", "Muhammad"); // contoh penggunaan replace
+const asalKota = tempatLahir.slice(0, 5); // Mengambil 5 karakter pertama
 
 // 3. Gabungkan string alamat
-const jalan = "Jl. Raya Sumedang-Cibeureum";
+const jalan = "Jl. Raya Sumedang - Cibeureum";
 const kota = "Sumedang";
 
-// pakai operator +
+// Menggabungkan dengan operator +
 const alamatPlus = jalan + ", " + kota;
 
-// pakai Template Literals
+// Menggabungkan dengan Template Literals
 const alamatTemplate = `${jalan}, ${kota}`;
 
-// 4. Status teks lebih deskriptif
-const statusText = statusMahasiswa ? "Aktif" : "Tidak Aktif";
-
-// 5. Output dengan Template Literals
+// 4. Siapkan output menggunakan Template Literals
 const biodata = `
 =========================================
           BIODATA MAHASISWA
 =========================================
-Nama Lengkap    : ${namaBesar}
-Nama Lowercase  : ${namaKecil}
-Nama Trim       : "${namaTrim}"
-Nama Replace    : ${namaGanti}
-Tempat Lahir    : ${tempatLahir}
-Tanggal Lahir   : ${tanggalLahir}
-Umur            : ${umur} tahun
-Jurusan         : ${jurusan}
-Universitas     : ${universitas}
-Asal Kota       : ${asalKota}
-Status Mahasiswa: ${statusText}
-
-Alamat          : ${alamatPlus}
-Alamat          : ${alamatTemplate}
+Nama Lengkap      : ${namaLengkap}
+Nama Uppercase    : ${namaBesar}
+Nama Lowercase    : ${namaKecil}
+Nama Trim         : "${namaTrim}"
+Nama Replace      : ${namaGanti}
+Tempat Lahir      : ${tempatLahir}
+Tanggal Lahir     : ${tanggalLahir}
+Umur              : ${umur} tahun
+Jurusan           : ${jurusan}
+Universitas       : ${universitas}
+Asal Kota (Slice) : ${asalKota}
+Status Aktif      : ${statusMahasiswa ? "Aktif" : "Tidak Aktif"}
+Alamat (+)        : ${alamatPlus}
+Alamat (Template) : ${alamatTemplate}
 =========================================
 `;
 
-// 6. Tampilkan output ke konsol
+// 5. Tampilkan output ke konsol
 console.log(biodata);
