@@ -1,54 +1,37 @@
-// biodata.js
+// Program Biodata Sederhana
+// 230660221015
 
-// 1. Deklarasikan variabel menggunakan const dan let
-const namaLengkap = "Febry Nursyahbriyana"; // Ganti dengan nama lengkapmu
-const tempatLahir = "Sumedang";
-let tanggalLahir = "16 Juli 2004";
-let umur = 21;
-let statusMahasiswa = true;
+const firstName = "Febry";
+const lastName = "Nursyahbriyana";
+const nik = "3211221607040001";
+const position = "Backend Developer";
+let grossSalary = 9500000;
+let isPermanent = true;
 
-// Variabel baru
-const jurusan = "Sistem Informasi";
-const universitas = "Universitas Sebelas April";
+// PROSES DATA
+// 1. Ambil initial name
+const initialFirstName = firstName.slice(0, 1);
+const initialLastName = lastName.slice(0, 1);
 
-// 2. Gunakan string methods untuk memanipulasi data
-const namaBesar = namaLengkap.toUpperCase();
-const namaKecil = namaLengkap.toLowerCase();
-const namaTrim = namaLengkap.trim();
-const namaGanti = namaLengkap.replace("Febry", "Muhammad"); // contoh penggunaan replace
-const asalKota = tempatLahir.slice(0, 5); // Mengambil 5 karakter pertama
+// 2. Ambil 4 digit terakhir NIK
+const lastFourDigits = nik.slice(-4);
 
-// 3. Gabungkan string alamat
-const jalan = "Jl. Raya Sumedang - Cibeureum";
-const kota = "Sumedang";
+// 3. Generate email
+const companyEmail = `${initialFirstName.toLowerCase()}${initialLastName.toLowerCase()}${lastFourDigits}@dmw.nk-uk-bs-howuf-beewe`;
 
-// Menggabungkan dengan operator +
-const alamatPlus = jalan + ", " + kota;
+// 4. Hitung net salary
+let netSalary = grossSalary;
+if (isPermanent) {
+    netSalary = grossSalary - (grossSalary * 0.05); // Potongan 5% untuk permanent
+}
 
-// Menggabungkan dengan Template Literals
-const alamatTemplate = `${jalan}, ${kota}`;
-
-// 4. Siapkan output menggunakan Template Literals
-const biodata = `
-=========================================
-          BIODATA MAHASISWA
-=========================================
-Nama Lengkap      : ${namaLengkap}
-Nama Uppercase    : ${namaBesar}
-Nama Lowercase    : ${namaKecil}
-Nama Trim         : "${namaTrim}"
-Nama Replace      : ${namaGanti}
-Tempat Lahir      : ${tempatLahir}
-Tanggal Lahir     : ${tanggalLahir}
-Umur              : ${umur} tahun
-Jurusan           : ${jurusan}
-Universitas       : ${universitas}
-Asal Kota (Slice) : ${asalKota}
-Status Aktif      : ${statusMahasiswa ? "Aktif" : "Tidak Aktif"}
-Alamat (+)        : ${alamatPlus}
-Alamat (Template) : ${alamatTemplate}
-=========================================
-`;
-
-// 5. Tampilkan output ke konsol
-console.log(biodata);
+// OUTPUT
+console.log("=== BIODATA KARYAWAN ===");
+console.log("Nama Lengkap   : " + firstName + " " + lastName);
+console.log("NIK            : " + nik);
+console.log("Posisi         : " + position);
+console.log("Email Company  : " + companyEmail);
+console.log("Status         : " + (isPermanent ? "Permanent" : "Contract"));
+console.log("Gaji Gross     : Rp " + grossSalary.toLocaleString());
+console.log("Gaji Net       : Rp " + netSalary.toLocaleString());
+console.log("=========================");

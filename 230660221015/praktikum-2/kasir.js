@@ -10,8 +10,8 @@ function prosesPembelian() {
     };
     
     // Input pemesanan
-    const kodeMenu = "PIZZA";  // Bisa diganti dengan input
-    const jumlahPesanan = 2;   // Bisa diganti dengan input
+    const kodeMenu = "PIZZA";
+    const jumlahPesanan = 2;
     
     // Cek menu tersedia
     const menu = menuKafe[kodeMenu.toUpperCase()];
@@ -55,6 +55,3 @@ Total Bayar     : ${formatRupiah(totalBayar)}
 
 // Jalankan program
 console.log(prosesPembelian());
-
-// Export untuk testing (jika diperlukan)
-module.exports = prosesPembelian;
