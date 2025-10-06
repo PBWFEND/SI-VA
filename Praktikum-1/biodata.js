@@ -1,15 +1,15 @@
 // biodata.js
 
 // 1. Deklarasikan variabel menggunakan const dan let
-const namaLengkap = "Komarudin Anshar Rahendra"; // Ganti dengan nama lengkapmu
+const namaLengkap = "Dede Dian Permana"; // Ganti dengan nama lengkapmu
 const tempatLahir = "Sumedang";
-let tanggalLahir = "19 September 2002"; // Format bisa disesuaikan
-let umur = 24; // Ganti dengan umurmu
+let tanggalLahir = "01 Mei 2005"; // Format bisa disesuaikan
+let umur = 21; // Ganti dengan umurmu
 let statusMahasiswa = true; // Gunakan boolean (true jika aktif, false jika tidak)
 
 // 2. Gunakan string methods untuk memanipulasi data
 const namaBesar = namaLengkap.toUpperCase();
-const asalKota = tempatLahir.slice(0, 20); // Mengambil 5 karakter pertama
+const asalKota = tempatLahir.slice(0, 5); // Mengambil 5 karakter pertama
 
 // 3. Siapkan output menggunakan Template Literals
 const biodata = `
