@@ -9,7 +9,7 @@ let statusMahasiswa = true; // Gunakan boolean (true jika aktif, false jika tida
 
 // 2. Gunakan string methods untuk memanipulasi data
 const namaBesar = namaLengkap.toUpperCase();
-const asalKota = tempatLahir.slice(0, 20); // Mengambil 5 karakter pertama
+const asalKota = tempatLahir.slice(0, 10); // Mengambil 5 karakter pertama
 
 // 3. Siapkan output menggunakan Template Literals
 const biodata = `
