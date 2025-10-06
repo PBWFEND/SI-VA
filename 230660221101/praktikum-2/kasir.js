@@ -1,93 +1,79 @@
 /**
- * Menghitung total pesanan di Kafe Koding berdasarkan menu dan jumlah,
- * lalu memberikan diskon jika memenuhi syarat.
- *
+ * Fungsi untuk menghitung total pesanan di Kafe Koding.
  * @param {string} kodeMenu - Kode menu yang dipesan (KOPI, TEH, PIZZA).
  * @param {number} jumlah - Jumlah item yang dipesan.
- * @returns {string} - String struk pembelian yang sudah terformat.
+ * @returns {string} Rincian pesanan yang sudah diformat.
  */
 function hitungTotalPesanan(kodeMenu, jumlah) {
-  // 1. Inisialisasi variabel awal
+  let namaMenu = '';
   let hargaSatuan = 0;
-  let namaMenu = "";
 
-  // Validasi input untuk memastikan kodeMenu adalah string dan jumlah adalah angka
-  if (typeof kodeMenu !== 'string' || typeof jumlah !== 'number' || jumlah <= 0) {
-    return "Input tidak valid. Harap periksa kembali pesanan Anda.";
-  }
-  
-  // 2. Gunakan switch-case untuk menentukan harga berdasarkan kodeMenu
-  // Mengubah kodeMenu menjadi huruf besar agar tidak case-sensitive (e.g., "kopi" tetap valid)
+  // 1. Menentukan harga satuan dan nama menu menggunakan switch-case
   switch (kodeMenu.toUpperCase()) {
-    case "KOPI":
+    case 'KOPI':
+      namaMenu = 'Kopi';
       hargaSatuan = 25000;
-      namaMenu = "Kopi";
       break;
-    case "TEH":
+    case 'TEH':
+      namaMenu = 'Teh';
       hargaSatuan = 20000;
-      namaMenu = "Teh";
       break;
-    case "PIZZA":
+    case 'PIZZA':
+      namaMenu = 'Pizza';
       hargaSatuan = 55000;
-      namaMenu = "Pizza";
       break;
     default:
-      // Jika kode tidak ditemukan, kembalikan pesan error
-      return `--- Pesan Error ---\nMenu dengan kode "${kodeMenu}" tidak ditemukan.`;
+      return `Error: Kode menu "${kodeMenu}" tidak valid.`;
   }
 
-  // 3. Hitung subtotal
+  // 2. Menghitung subtotal
   const subtotal = hargaSatuan * jumlah;
 
-  // 4. Gunakan if-else untuk logika diskon
-  let diskonPersen = 0;
-  let diskonNominal = 0;
-
+  // 3. Menentukan diskon menggunakan if-else
+  let diskon = 0;
   if (subtotal > 100000) {
-    diskonPersen = 15;
-    diskonNominal = subtotal * 0.15;
+    diskon = subtotal * 0.15; // Diskon 15%
   } else if (subtotal > 50000) {
-    diskonPersen = 10;
-    diskonNominal = subtotal * 0.10;
+    diskon = subtotal * 0.10; // Diskon 10%
   }
 
-  // 5. Hitung total akhir setelah diskon
-  const totalBayar = subtotal - diskonNominal;
+  // 4. Menghitung total akhir
+  const totalAkhir = subtotal - diskon;
 
-  // 6. Format angka ke dalam format Rupiah (e.g., 110000 -> "Rp 110.000")
+  // Fungsi untuk memformat angka ke dalam format Rupiah
   const formatRupiah = (angka) => {
-    return `Rp ${angka.toLocaleString("id-ID")}`;
+    return new Intl.NumberFormat('id-ID', {
+      style: 'currency',
+      currency: 'IDR',
+      minimumFractionDigits: 0,
+    }).format(angka);
   };
-  
-  // 7. Kembalikan (return) string struk yang sudah terformat
-  const struk = `
---- Struk Pembelian Kafe Koding ---
-Menu Dipesan    : ${namaMenu}
-Jumlah          : ${jumlah}
-Subtotal        : ${formatRupiah(subtotal)}
-Diskon (${diskonPersen}%)    : - ${formatRupiah(diskonNominal)}
------------------------------------
-Total Bayar     : ${formatRupiah(totalBayar)}
---- Terima Kasih ---
-  `;
 
-  return struk.trim(); // .trim() untuk menghapus spasi kosong di awal dan akhir
+  // 5. Mengembalikan string rincian pesanan
+  return `
+========================================
+         STRUK PEMBAYARAN KAFE KODING
+========================================
+Menu          : ${namaMenu}
+Jumlah        : ${jumlah}
+Subtotal      : ${formatRupiah(subtotal)}
+Diskon        : ${formatRupiah(diskon)}
+----------------------------------------
+Total Bayar   : ${formatRupiah(totalAkhir)}
+========================================
+  `;
 }
 
-// --- Contoh Penggunaan Fungsi ---
+// --- Contoh Penggunaan ---
 
-// Contoh 1: Sesuai permintaan (mendapat diskon 15%)
-console.log("--- CONTOH 1: Pizza x 2 ---");
-console.log(hitungTotalPesanan("PIZZA", 2));
+// Pesanan 1: Pizza 2 Pcs (Dapat diskon 15%)
+console.log(hitungTotalPesanan('PIZZA', 2));
 
-// Contoh 2: Pembelian yang mendapat diskon 10%
-console.log("\n--- CONTOH 2: Teh x 3 ---");
-console.log(hitungTotalPesanan("TEH", 3));
+// Pesanan 2: Kopi 3 Pcs (Dapat diskon 10%)
+console.log(hitungTotalPesanan('KOPI', 3));
 
-// Contoh 3: Pembelian tanpa diskon
-console.log("\n--- CONTOH 3: Kopi x 1 ---");
-console.log(hitungTotalPesanan("KOPI", 1));
+// Pesanan 3: Teh 1 Pcs (Tidak dapat diskon)
+console.log(hitungTotalPesanan('TEH', 1));
 
-// Contoh 4: Kode menu tidak valid
-console.log("\n--- CONTOH 4: Menu Salah ---");
-console.log(hitungTotalPesanan("NASI", 2));
+// Pesanan 4: Kode menu salah
+console.log(hitungTotalPesanan('SUSU', 2));
