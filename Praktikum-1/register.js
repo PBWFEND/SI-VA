@@ -1,27 +1,13 @@
 // register.js
 
 // --- INPUT DATA ---
-<<<<<<< HEAD:230660221010/Praktikum-1/register.js
 const firstName = "Brilian";
 const lastName = "Pratama";
-=======
-const firstName = "Tira";
-const lastName = "Azzahra";
->>>>>>> upstream/main:230660221021/Praktikum1/register.js
 const nik = "3204011205990003";
 const position = "Backend Developer";
 let grossSalary = 9500000;
 let isPermanent = true;
 
-<<<<<<< HEAD:230660221010/Praktikum-1/register.js
-=======
-//--TANTANGAN EKSTRA---
-//1.VALIDASI PANJANG NIK
-console.log("Panjang NIK Valid:", nik.length === 16);
-
-//2.GENERATE EMAIL PERUSAAHAAN
-const emailPerusahaan = (firstName.toLowerCase() + "." + lastName.toLowerCase() + "@ciptasolusi.digital");
->>>>>>> upstream/main:230660221021/Praktikum1/register.js
 
 // --- PROSES DATA ---
 
@@ -47,32 +33,21 @@ const statusText = isPermanent ? "Karyawan Tetap" : "Karyawan Kontrak"; // Hasil
 
 // --- OUTPUT ---
 
-<<<<<<< HEAD:230660221010/Praktikum-1/register.js
 // --- OUTPUT ---
 
-=======
->>>>>>> upstream/main:230660221021/Praktikum1/register.js
 const summary = `
 ===================================================
         DATA PENDAFTARAN KARYAWAN BARU
 ===================================================
-
 SELAMAT DATANG DI PT. CIPTA SOLUSI DIGITAL!
-
 Berikut adalah ringkasan data Anda:
-
   Nama Lengkap      : ${(firstName + " " + lastName).toUpperCase()}
   Posisi            : ${position}
   Employee ID       : ${employeeID}
   
   Gaji Pokok (Gross): ${formattedSalary}
   Status            : ${statusText}
-
 ===================================================
 `;
 
-<<<<<<< HEAD:230660221010/Praktikum-1/register.js
 console.log(summary);
-=======
-console.log(summary);
->>>>>>> upstream/main:230660221021/Praktikum1/register.js

@@ -1,27 +1,15 @@
 // register.js
 
 // --- INPUT DATA ---
-<<<<<<< HEAD:230660221010/Praktikum-1/register.js
-const firstName = "Brilian";
-const lastName = "Pratama";
-=======
-const firstName = "Tira";
-const lastName = "Azzahra";
->>>>>>> upstream/main:230660221021/Praktikum1/register.js
-const nik = "3204011205990003";
+const firstName = "nazwa";
+const lastName = "aulia rachma";
+const nik = "230660221104";
 const position = "Backend Developer";
 let grossSalary = 9500000;
 let isPermanent = true;
 
-<<<<<<< HEAD:230660221010/Praktikum-1/register.js
-=======
-//--TANTANGAN EKSTRA---
-//1.VALIDASI PANJANG NIK
-console.log("Panjang NIK Valid:", nik.length === 16);
-
-//2.GENERATE EMAIL PERUSAAHAAN
-const emailPerusahaan = (firstName.toLowerCase() + "." + lastName.toLowerCase() + "@ciptasolusi.digital");
->>>>>>> upstream/main:230660221021/Praktikum1/register.js
+// --- VALIDASI NIK ---
+console.log("Panjang NIK Valid:", nik.length === 16); // ✅ validasi panjang NIK
 
 // --- PROSES DATA ---
 
@@ -36,22 +24,15 @@ const lastNikDigits = nik.slice(-4); // Hasil: "0003"
 const employeeID = (initialFirstName + initialLastName + lastNikDigits).toUpperCase(); // Hasil: "BP0003"
 
 // 4. Format Gaji ke format Rupiah
-// toLocaleString('id-ID') adalah cara bawaan JavaScript untuk format angka Indonesia
-
 const formattedSalary = `Rp ${grossSalary.toLocaleString('id-ID')}`; // Hasil: "Rp 9.500.000"
 
 // 5. Ubah boolean menjadi teks yang deskriptif
-
 const statusText = isPermanent ? "Karyawan Tetap" : "Karyawan Kontrak"; // Hasil: "Karyawan Tetap"
-// Ini menggunakan operator ternary, versi singkat dari if-else.
+
+// 6. Generate Email Perusahaan
+const emailPerusahaan = `${firstName.toLowerCase()}.${lastName.toLowerCase()}@ciptasolusi.digital`;
 
 // --- OUTPUT ---
-
-<<<<<<< HEAD:230660221010/Praktikum-1/register.js
-// --- OUTPUT ---
-
-=======
->>>>>>> upstream/main:230660221021/Praktikum1/register.js
 const summary = `
 ===================================================
         DATA PENDAFTARAN KARYAWAN BARU
@@ -64,6 +45,7 @@ Berikut adalah ringkasan data Anda:
   Nama Lengkap      : ${(firstName + " " + lastName).toUpperCase()}
   Posisi            : ${position}
   Employee ID       : ${employeeID}
+  Email Perusahaan  : ${emailPerusahaan}
   
   Gaji Pokok (Gross): ${formattedSalary}
   Status            : ${statusText}
@@ -71,8 +53,4 @@ Berikut adalah ringkasan data Anda:
 ===================================================
 `;
 
-<<<<<<< HEAD:230660221010/Praktikum-1/register.js
 console.log(summary);
-=======
-console.log(summary);
->>>>>>> upstream/main:230660221021/Praktikum1/register.js
