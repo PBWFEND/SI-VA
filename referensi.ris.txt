@@ -1,0 +1,58 @@
+TY  - JOUR
+AU  - H. S. H.
+PY  - 2020
+TI  - Adopsi Teknologi Smart Farming di Kalangan Petani dan Faktor-Faktor yang Memengaruhinya
+JO  - Forum Penelitian Agro Ekonomi
+VL  - 38
+IS  - 1
+SP  - 19
+EP  - 34
+ER  - 
+
+TY  - JOUR
+AU  - Saputra, D. H.
+AU  - Sari, B. P.
+PY  - 2022
+TI  - Pengembangan Model Bisnis Startup Agroteknologi Menggunakan Pendekatan Business Model Canvas (BMC)
+JO  - Jurnal Pengembangan Teknologi Informasi dan Ilmu Komputer
+VL  - 6
+IS  - 5
+SP  - 2245
+EP  - 2253
+ER  - 
+
+TY  - JOUR
+AU  - Ikhsan, M. F.
+AU  - Subejo, S.
+PY  - 2023
+TI  - Peran Penyuluh Pertanian dalam Meningkatkan Literasi Digital Petani di Era Revolusi Industri 4.0
+JO  - Jurnal Penyuluhan
+VL  - 19
+IS  - 1
+SP  - 102
+EP  - 114
+ER  - 
+
+
+Sumber
+
+
+
+
+
+
+
+
+
+
+
+Video
+
+Deep Research
+
+Canvas
+
+Gambar
+
+Gemini dapat membuat kesalahan, jadi periksa kembali responsnya
+
