@@ -87,7 +87,7 @@ TOTAL AKHIR    : ${formatRupiah(totalAkhir)}
 
 
 console.log("--- CONTOH 1: Diskon 15% (Subtotal > Rp 100.000) ---");
-const pesanan1 = hitungTotalPesanan('PIZZA', 2); // 3 * 55.000 = 165.000
+const pesanan1 = hitungTotalPesanan('PIZZA', 5); // 3 * 55.000 = 165.000
 console.log(pesanan1);
 
 // Ekspor fungsi jika script ini digunakan sebagai modul
