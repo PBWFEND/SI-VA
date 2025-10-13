@@ -11,7 +11,7 @@ let statusMahasiswa = true;
 const jurusan = "Sistem Informasi";
 const universitas = "Universitas Sebelas April Sumedang";
 
-// Variabel alamat (gabungan string)
+// Variabel alamat 
 const jalan = "Jl. Raya Dayeuhluhur";
 const kota = "Sumedang";
 
