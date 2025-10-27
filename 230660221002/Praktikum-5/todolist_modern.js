@@ -1,6 +1,6 @@
 // todolist_modern.js
 
-// 1. Inisialisasi data array of objects
+// Data awal berupa kumpulan objek tugas
 let tasks = [
   { id: 1, nama: "Mengerjakan tugas backend", selesai: false },
   { id: 2, nama: "Belajar materi NodeJS", selesai: true },
@@ -8,7 +8,7 @@ let tasks = [
   { id: 4, nama: "Membaca dokumentasi Express", selesai: true },
 ];
 
-// 2. Menambah tugas baru menggunakan .push()
+// Fungsi untuk menambahkan item tugas baru ke dalam array
 const tambahTugas = (namaTugas) => {
   const idBaru = tasks.length > 0 ? tasks[tasks.length - 1].id + 1 : 1;
   tasks.push({
@@ -16,27 +16,27 @@ const tambahTugas = (namaTugas) => {
     nama: namaTugas,
     selesai: false,
   });
-  console.log(`Tugas "${namaTugas}" berhasil ditambahkan!`);
+  console.log(`Tugas baru "${namaTugas}" telah berhasil ditambahkan.`);
 };
 
-// Menjalankan fungsi tambah tugas
+// Jalankan fungsi untuk menambah tugas
 tambahTugas("Review kode teman");
 
-// 3. Menampilkan semua tugas menggunakan .forEach() + destructuring
-console.log("\n--- Daftar Semua Tugas ---");
+// Menampilkan seluruh daftar tugas (dengan destructuring agar kode lebih ringkas)
+console.log("\n=== Daftar Tugas Saat Ini ===");
 tasks.forEach(({ nama, selesai }) => {
   const status = selesai ? "[✓]" : "[x]";
   console.log(`${status} ${nama}`);
 });
 
-// 4. Menyaring tugas yang belum selesai menggunakan .filter() (arrow + implicit return)
-console.log("\n--- Tugas yang Belum Selesai ---");
+// Menampilkan hanya tugas yang statusnya belum selesai (menggunakan arrow + implicit return)
+console.log("\n=== Daftar Tugas Belum Selesai ===");
 const tugasBelumSelesai = tasks.filter(({ selesai }) => !selesai);
 
-// Menampilkan hasil filter
+// Cetak hasil filter di atas
 tugasBelumSelesai.forEach(({ nama }) => console.log(`- ${nama}`));
 
-// 5. Membuat daftar nama tugas saja menggunakan .map() (arrow + implicit return)
-console.log("\n--- Ringkasan Nama Tugas (Map) ---");
+// Membuat daftar hanya berisi nama-nama tugas (arrow + implicit return)
+console.log("\n=== Ringkasan Nama Semua Tugas ===");
 const namaTugas = tasks.map(({ nama }) => nama);
 console.log(namaTugas);
