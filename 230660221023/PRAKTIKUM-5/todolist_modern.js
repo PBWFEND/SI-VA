@@ -35,15 +35,15 @@ tasks.forEach(({ nama, selesai }) => {
 
 // 4. Menyaring tugas yang belum selesai menggunakan .filter()
 console.log("\n--- Tugas yang Belum Selesai ---");
-// Refactor: Arrow Function satu baris dengan Implicit Return
+// Refactor: Arrow Function satu baris dengan Implicit Return (tugas ekstra)
 const tugasBelumSelesai = tasks.filter(task => !task.selesai); 
 
-// Menampilkan hasil filter (sudah modern)
+// Menampilkan hasil filter (sudah menggunakan Arrow Function)
 tugasBelumSelesai.forEach(task => console.log(`- ${task.nama}`));
 
 // 5. Membuat daftar nama tugas saja menggunakan .map()
 console.log("\n--- Ringkasan Nama Tugas (Map) ---");
-// Refactor: Arrow Function satu baris dengan Implicit Return
+// Refactor: Arrow Function satu baris dengan Implicit Return (tugas ekstra)
 const namaTugas = tasks.map(task => task.nama); 
 
 console.log(namaTugas);
