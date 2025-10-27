@@ -1,10 +1,10 @@
 // biodata.js
 
 // 1. Deklarasikan variabel dasar
-const namaLengkap = "Elangga Yudistira";
-const tempatLahir = "Bandung";
-const tanggalLahir = "07 Juli 2004";
-let umur = 21; 
+const namaLengkap = "Aqsal Susandi Putra";
+const tempatLahir = "Sumedang";
+const tanggalLahir = "28 November 2004";
+let umur = 20; 
 let asalKotaLengkap = "Sumedang";
 let statusMahasiswa = true;
 
@@ -15,15 +15,15 @@ const universitas = "Universitas Sebelas April Sumedang";
 // 3. Eksplorasi string methods
 const namaBesar = namaLengkap.toUpperCase(); // kapital semua
 const namaKecil = namaLengkap.toLowerCase(); // huruf kecil semua
-const namaTrim = "   Elangga   ".trim(); // hapus spasi depan-belakang
-const kotaGanti = asalKotaLengkap.replace("Sumedang", "Bandung"); // ganti teks
+const namaTrim = "   Aqsal   ".trim(); // hapus spasi depan-belakang
+const kotaGanti = asalKotaLengkap.replace("Sumedang", "Sumedang"); // ganti teks
 const asalKota = asalKotaLengkap.slice(0, 10); // ambil 10 karakter pertama
 
 // Status lebih terbaca
 const statusAktif = statusMahasiswa ? "Aktif" : "Tidak Aktif";
 
 // 4. Gabungkan string (alamat)
-let jalan = "Jl. Raya Sumedang No.10 ";
+let jalan = "Jl. Raya Bandung - Cirebon ";
 let kota = "Sumedang";
 let alamatConcat = jalan + kota; // cara lama (concatenation)
 let alamatTemplate = `${jalan}${kota}`; // cara modern (template literal)
