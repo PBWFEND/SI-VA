@@ -1,6 +1,6 @@
-// register.js
+// Program Registrasi Sederhana
+// 230660221015
 
-// --- INPUT DATA ---
 const firstName = "Febry";
 const lastName = "Nursyahbriyana";
 const nik = "3211221607040001";
@@ -8,42 +8,30 @@ const position = "Backend Developer";
 let grossSalary = 9500000;
 let isPermanent = true;
 
-// --- PROSES DATA ---
-
-// 1. Ambil inisial nama
-const initialFirstName = firstName.slice(0, 1); // Hasil: "B"
-const initialLastName = lastName.slice(0, 1);   // Hasil: "P"
+// PROSES DATA
+// 1. Ambil initial name
+const initialFirstName = firstName.slice(0, 1);
+const initialLastName = lastName.slice(0, 1);
 
 // 2. Ambil 4 digit terakhir NIK
-const lastNikDigits = nik.slice(-4); // Hasil: "0003"
+const lastFourDigits = nik.slice(-4);
 
-// 3. Gabungkan semuanya dan ubah ke huruf besar
-const employeeID = (initialFirstName + initialLastName + lastNikDigits).toUpperCase(); // Hasil: "BP0003"
+// 3. Generate email
+const companyEmail = `${initialFirstName.toLowerCase()}${initialLastName.toLowerCase()}${lastFourDigits}@dmw.nk-uk-bs-howuf-beewe`;
 
-// 4. Format Gaji ke format Rupiah
-const formattedSalary = `Rp ${grossSalary.toLocaleString('id-ID')}`; // Hasil: "Rp 9.500.000"
+// 4. Hitung net salary
+let netSalary = grossSalary;
+if (isPermanent) {
+    netSalary = grossSalary - (grossSalary * 0.05); // Potongan 5% untuk permanent
+}
 
-// 5. Ubah boolean menjadi teks yang deskriptif
-const statusText = isPermanent ? "Karyawan Tetap" : "Karyawan Kontrak";
-
-// --- OUTPUT ---
-const summary = `
-===================================================
-        DATA PENDAFTARAN KARYAWAN BARU
-===================================================
-
-SELAMAT DATANG DI PT. CIPTA SOLUSI DIGITAL!
-
-Berikut adalah ringkasan data Anda:
-
-  Nama Lengkap      : ${(firstName + " " + lastName).toUpperCase()}
-  Posisi            : ${position}
-  Employee ID       : ${employeeID}
-  
-  Gaji Pokok (Gross): ${formattedSalary}
-  Status            : ${statusText}
-
-===================================================
-`;
-
-console.log(summary);
+// OUTPUT
+console.log("=== DATA REGISTRASI ===");
+console.log("Nama Lengkap   : " + firstName + " " + lastName);
+console.log("NIK            : " + nik);
+console.log("Posisi         : " + position);
+console.log("Email Company  : " + companyEmail);
+console.log("Status         : " + (isPermanent ? "Permanent" : "Contract"));
+console.log("Gaji Gross     : Rp " + grossSalary.toLocaleString());
+console.log("Gaji Net       : Rp " + netSalary.toLocaleString());
+console.log("=========================");

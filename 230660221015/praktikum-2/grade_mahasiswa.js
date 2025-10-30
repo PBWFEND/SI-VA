@@ -1,61 +1,38 @@
 // Program Penilaian Grade Mahasiswa
 // 230660221015
 
-/**
- * Menentukan grade berdasarkan nilai mahasiswa
- * @param {number} nilai - Nilai mahasiswa (0-100)
- * @returns {string} Grade dan keterangan
- */
-function hitungGradeMahasiswa(nilai) {
-    // Validasi input
-    if (nilai < 0 || nilai > 100) {
-        return "Nilai tidak valid";
-    }
-    
-    // Tentukan grade berdasarkan range nilai
-    let grade, keterangan;
-    
-    if (nilai >= 90) {
-        grade = "A";
-        keterangan = "Luar Biasa";
-    } else if (nilai >= 80) {
-        grade = "B";
-        keterangan = "Baik";
-    } else if (nilai >= 70) {
-        grade = "C";
-        keterangan = "Cukup";
-    } else if (nilai >= 60) {
-        grade = "D";
-        keterangan = "Kurang";
-    } else {
-        grade = "E";
-        keterangan = "Gagal";
-    }
-    
-    return `${grade} (${keterangan})`;
+function tentukanGrade(skor) {
+  if (skor >= 90 && skor <= 100) {
+    return "A (Luar Biasa)";
+  } else if (skor >= 80 && skor < 90) {
+    return "B (Baik)";
+  } else if (skor >= 70 && skor < 80) {
+    return "C (Cukup)";
+  } else if (skor >= 60 && skor < 70) {
+    return "D (Kurang)";
+  } else if (skor >= 0 && skor < 60) {
+    return "E (Gagal)";
+  } else {
+    return "Skor tidak valid";
+  }
 }
 
-// Data mahasiswa untuk testing
-const dataMahasiswa = [
-    { nama: "Andi", nilai: 95 },
-    { nama: "Budi", nilai: 78 },
-    { nama: "Caca", nilai: 55 },
-    { nama: "Deni", nilai: 105 },
-    { nama: "Eka", nilai: 82 }
-];
+// Test cases
+let nilaiAndi = 95;
+let nilaiBudi = 78;
+let nilaiCaca = 55;
+let nilaiDeni = 105;
+let nilaiEka = 85;
+let nilaiFani = 65;
+let nilaiGita = 45;
 
-// Tampilkan laporan grade
-console.log("=== LAPORAN GRADE MAHASISWA ===");
-
-dataMahasiswa.forEach(mahasiswa => {
-    const grade = hitungGradeMahasiswa(mahasiswa.nilai);
-    console.log(`Nama    : ${mahasiswa.nama}`);
-    console.log(`Nilai   : ${mahasiswa.nilai}`);
-    console.log(`Grade   : ${grade}`);
-    console.log("-----------------------------");
-});
-
-console.log("=== SELESAI ===");
-
-// Export untuk testing (jika diperlukan)
-module.exports = hitungGradeMahasiswa;
+// Tampilkan hasil
+console.log("--- Laporan Grade Mahasiswa ---");
+console.log(`Mahasiswa Andi (Nilai: ${nilaiAndi}) mendapatkan grade: ${tentukanGrade(nilaiAndi)}`);
+console.log(`Mahasiswa Budi (Nilai: ${nilaiBudi}) mendapatkan grade: ${tentukanGrade(nilaiBudi)}`);
+console.log(`Mahasiswa Caca (Nilai: ${nilaiCaca}) mendapatkan grade: ${tentukanGrade(nilaiCaca)}`);
+console.log(`Mahasiswa Deni (Nilai: ${nilaiDeni}) mendapatkan grade: ${tentukanGrade(nilaiDeni)}`);
+console.log(`Mahasiswa Eka (Nilai: ${nilaiEka}) mendapatkan grade: ${tentukanGrade(nilaiEka)}`);
+console.log(`Mahasiswa Fani (Nilai: ${nilaiFani}) mendapatkan grade: ${tentukanGrade(nilaiFani)}`);
+console.log(`Mahasiswa Gita (Nilai: ${nilaiGita}) mendapatkan grade: ${tentukanGrade(nilaiGita)}`);
+console.log("-------------------------------");
