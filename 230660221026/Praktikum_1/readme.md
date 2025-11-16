@@ -1,1 +1,0 @@
-Disini saya baru latihan membuat biodata dan data gaji
