@@ -77,7 +77,7 @@ mhsAndi.lihatSKS();
 
 // (Opsional) Coba akses langsung private field (akan menyebabkan error)
 try {
-  console.log(mhsAndi.#sks);
+  console.log(mhsAndi.sks);
 } catch (error) {
   console.log(
     "\n[Error Enkapsulasi Diharapkan]: Tidak bisa mengakses #sks secara langsung dari luar kelas."
