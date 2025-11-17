@@ -37,4 +37,4 @@ laporanPenjualan.forEach(laporan => console.log(laporan));
 console.log("\n"); // Memberi jarak antar output
 
 console.log("--- 💰 Total Pendapatan ---");
-console.log(`Total seluruh pendapatan: Rp ${totalPendapatan.toLocaleString('id-ID')}`);
+console.log(`Total seluruh pendapatan: Rp ${totalPendapatan.toLocaleString('id-ID')}`); 
