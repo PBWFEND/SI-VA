@@ -14,7 +14,7 @@ async function mainSupabase() {
   console.log("\n[CREATE] Menambahkan tugas...");
   await supabase.from('todos').insert([
     { tugas: 'Belajar Supabase', selesai: false },
-    { tugas: 'Mengerjakan Modul 9', selesai: true },
+    { tugas: 'Mengerjakan Modul 8', selesai: true },
   ]);
 
   // 2. READ
@@ -30,11 +30,11 @@ async function mainSupabase() {
     .eq('tugas', 'Belajar Supabase');
 
   // 4. DELETE
-  console.log("\n[DELETE] Menghapus 'Mengerjakan Modul 9'...");
+  console.log("\n[DELETE] Menghapus 'Mengerjakan Modul 8'...");
   await supabase
     .from('todos')
     .delete()
-    .eq('tugas', 'Mengerjakan Modul 9');
+    .eq('tugas', 'Mengerjakan Modul 8');
 
   // 5. READ (Final)
   console.log("\n[READ] Hasil akhir:");

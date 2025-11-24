@@ -1,16 +1,17 @@
 {
-  "name": "praktikum-9-mysql",
+  "name": "praktikum-ts-dasar",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
-  "type": "module",  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "mysql2": "^3.10.1" 
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
   }
 }
