@@ -6,7 +6,7 @@ const lastName = "Feriyanda";
 const nim = "230660221026";
 const position = "Backend Developer";
 let grossSalary = 4500000;
-let isPermanent = false;
+let isPermanent = true;
 
 // --- PROSES DATA ---
 
