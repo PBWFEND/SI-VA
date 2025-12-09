@@ -12,5 +12,6 @@
   "type": "commonjs",
   "dependencies": {
     "@supabase/supabase-js": "^2.81.1"
-  }
+  },
+  "devDependencies": {}
 }

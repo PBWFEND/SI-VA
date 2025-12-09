@@ -1,39 +1,47 @@
 //import express
 const express = require('express')
 
-//import CORS
-const cors = require('cors')
+//init express router
+const router = express.Router();
 
-//import bodyParser
-const bodyParser = require('body-parser')
+//import verifyToken
+const verifyToken = require('../middleware/auth');
 
-//import router
-const router = require('./routes')
+//import register controller
+const registerController = require('../controllers/RegisterController');
 
-//init app
-const app = express()
+//import login controller
+const loginController = require('../controllers/LoginController');
 
-//use cors
-app.use(cors())
+//import user controller
+const userController = require('../controllers/UserController');
 
-//use body parser
-app.use(bodyParser.urlencoded({ extended: false }))
+//import validate register and login
+const { validateRegister, validateLogin } = require('../utils/validators/auth');
 
-// parse application/json
-app.use(bodyParser.json())
+//import validate user
+const { validateUser } = require('../utils/validators/user');
 
-//define port
-const port = 3000;
+//define route for register
+router.post('/register', validateRegister, registerController.register);
 
-//route
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+//define route for login
+router.post('/login', validateLogin, loginController.login);
 
-//define routes
-app.use('/api', router);
+//define route for user
+router.get('/admin/users', verifyToken, userController.findUsers);
 
-//start server
-app.listen(port, () => {
-    console.log(`Server started on port ${port}`);
-})
+//define route for user create
+router.post('/admin/users', verifyToken, validateUser, userController.createUser);
+
+//define route for user by id
+router.get('/admin/users/:id', verifyToken, userController.findUserById);
+
+//define route for user update
+router.put('/admin/users/:id', verifyToken, validateUser, userController.updateUser);
+
+//define route for user delete
+router.delete('/admin/users/:id', verifyToken, userController.deleteUser);
+
+//export router
+module.exports = router
