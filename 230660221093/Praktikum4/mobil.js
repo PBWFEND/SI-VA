@@ -61,5 +61,4 @@ const mobil = {
   // Mematikan mesin
   console.log(">> Mematikan mesin...");
   mobil.matikanMesin();
-  console.log(`Status mesin menyala: ${mobil.mesinMenyala}`);
-  
+  console.log(`Status mesin menyala: ${mobil.mesinMenyala}`);  
