@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    /* Direktori Output & Input */
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    /* Environment Settings */
+    "module": "NodeNext",
+    "target": "ES2020",
+    "moduleResolution": "NodeNext",
+    "types": ["node"],
+
+    /* Library yang digunakan oleh kode */
+    "lib": ["ES2020"],
+
+    /* Output Tambahan */
+    "sourceMap": true,
+    "declaration": false,
+    "declarationMap": false,
+
+    /* Strict Mode (PENTING!) */
+    "strict": true,
+
+    /* Lainnya */
+    "verbatimModuleSyntax": true,
+    "skipLibCheck": true,
+    "isolatedModules": true
+  },
+  "include": ["src"]
+}
